@@ -1,23 +1,20 @@
 #include <stdio.h>
 #include <raylib.h>
+#include <stdlib.h>
+#include <math.h>
 
-int main(void) {
+#include "config.h"
+#include "util.h"
+#include "game.h"
 
-    InitWindow(500, 500, "surgen");
-    SetTargetFPS(1000);
+int main(void)
+{
 
-    while (!WindowShouldClose())
-    {
+    Game_init();
 
-        BeginDrawing();
-
-            DrawRectangle(0, 0, 100, 100, RED);
-
-        EndDrawing();
-
-    }
-
-    CloseWindow();
+    Game_start();
+    
+    Game_free();
 
     return 0;
 }
